@@ -1,0 +1,71 @@
+<div class="container andromeda">
+  <div class="header flex justify-content-center p-3">
+    <img
+      src="../../../assets/images/Logo-Andromeda.png"
+      alt=""
+      class="justify-content-center"
+      style="width: 200px"
+    />
+    <div class="flex flex-row span align-items-center">
+      <i class="pi pi-sign-out" (click)="logout()"></i>
+      <span class="logout" (click)="logout()">Cerrar sesión</span>
+    </div>
+  </div>
+  <div class="p-2">
+    <div class="card">
+      <h3>Precio de BTC</h3>
+      <p-chart type="bar" [data]="data" [options]="options" />
+    </div>
+  </div>
+  <div class="p-2">
+    <div class="card flex flex-column align-items-center">
+      <h2>Contáctanos</h2>
+      <form
+        action=""
+        class="flex flex-column p-2 justify-content-center align-items-center"
+        style="width: 400px"
+        [formGroup]="form"
+      >
+        <div class="input-box">
+          <input type="text" placeholder="Nombre" formControlName="name" />
+        </div>
+        <small
+          class="p-error"
+          *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+          >Nombre debe contener al menos 3 caracteres</small
+        >
+        <div class="input-box mt-2">
+          <input
+            type="text"
+            placeholder="Apellido"
+            formControlName="lastname"
+          />
+        </div>
+        <small
+          class="p-error"
+          *ngIf="form.get('lastname')?.invalid && form.get('lastname')?.touched"
+          >Apellido debe contener al menos 3 caracteres</small
+        >
+        <div class="input-box mt-2">
+          <input
+            type="text"
+            placeholder="Telefono"
+            formControlName="phone"
+            (keypress)="onKeyPress($event)"
+            (keydown)="onKeyDown($event)"
+            inputmode="numeric"
+          />
+        </div>
+        <small
+          class="p-error"
+          *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched"
+          >Campo de teléfono debe contener minimo 11 caracteres</small
+        >
+        <button class="btn-primary" (click)="submit()">Submit</button>
+        <small class="p-sucess" *ngIf="validSubmit"
+          >¡Gracias por participar!</small
+        >
+      </form>
+    </div>
+  </div>
+</div>

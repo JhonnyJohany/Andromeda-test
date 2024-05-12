@@ -1,0 +1,63 @@
+<div
+  class="h-screen w-full flex justify-content-center align-items-center andromeda"
+>
+  <div class="card form pt-4 pb-4">
+    <h2>Inicio de Sesión</h2>
+    <form action="" class="flex flex-column p-4" [formGroup]="form">
+      <div class="">
+        <div class="input-box">
+          <input
+            type="text"
+            placeholder="username"
+            [class.is-invalid]="usuarioValido"
+            formControlName="email"
+          />
+          <i class="icon pi pi-user"></i>
+        </div>
+        <small class="p-error" *ngIf="usuarioValido">Campo requerido</small>
+      </div>
+      <div class="input-box mt-2">
+        <input
+          [type]="passwordVisible ? 'text' : 'password'"
+          placeholder="password"
+          required
+          formControlName="password"
+          [class.is-invalid]="passwordValido"
+        />
+        <i
+          class="pi pi-eye"
+          *ngIf="!passwordVisible"
+          (click)="togglePasswordVisibility()"
+        ></i>
+        <i
+          class="pi pi-eye-slash"
+          *ngIf="passwordVisible"
+          (click)="togglePasswordVisibility()"
+        ></i>
+      </div>
+      <small class="p-error" *ngIf="passwordValido">Campo requerido</small>
+      <div class="check flex mt-4 justify-content-between">
+        <div>
+          <p-checkbox
+            class="checkbox-primary mr-1"
+            (click)="changeRememberDataCheck()"
+            [(ngModel)]="rememberData"
+            [binary]="true"
+            [ngModelOptions]="{ standalone: true }"
+            inputId="ny"
+            (change)="toggleRememberData()"
+          ></p-checkbox>
+          <label>Recuérdame</label>
+        </div>
+      </div>
+      <div class="flex justify-content-center mt-2">
+        <button class="btn-primary" (click)="submit()">Ingresar</button>
+      </div>
+      <div class="flex justify-content-center">
+        <small class="p-error" *ngIf="loginError"
+          >Usuario o Contraseña inválidos</small
+        >
+      </div>
+    </form>
+  </div>
+</div>

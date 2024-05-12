@@ -1,0 +1,7 @@
+FROM postgres:16.0
+
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD postgres
+ENV POSTGRES_DB andromeda
+
+EXPOSE 5432
