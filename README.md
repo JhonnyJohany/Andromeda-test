@@ -3,14 +3,12 @@
 ## Usuarios
 
 1. Usuario para ingresar a la aplicación:
-   username: andromeda
-   password: test
-   o
-   username: admin
-   password: test
-   o
-   username: prueba
-   password: 12345
+
+- username: andromeda password: test
+  o
+- username: admin password: test
+  o
+- username: prueba password: 12345
 
 ## Carpetas
 
