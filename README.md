@@ -16,11 +16,11 @@
 
 ## Carpetas
 
-- **frontend:** Directorio de Angular
+- **backend:** Directorio del servidor (backend)
 
 - **database:** Directorio Docker de Base de Datos
 
-- **backend:** Directorio del servidor (backend)
+- **frontend:** Directorio de Angular
 
 ## Clonar el Proyecto
 
